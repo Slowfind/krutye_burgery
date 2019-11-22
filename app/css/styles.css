@@ -1,5 +1,7 @@
 @import url(../../node_modules/normalize.css/normalize.css);
 @import url(../libs/animate.min.css);
+@import url(../libs/fancybox-master/dist/jquery.fancybox.min.css);
+@import url(../libs/swiper-master/dist/css/swiper.min.css);
 @font-face {
   font-family: "Roboto";
   font-style: normal;
@@ -4754,6 +4756,70 @@ html {
   height: 100vh !important;
 }
 
+.w-25 {
+  width: 25% !important;
+}
+
+.w-50 {
+  width: 50% !important;
+}
+
+.w-75 {
+  width: 75% !important;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.h-25 {
+  height: 25% !important;
+}
+
+.h-50 {
+  height: 50% !important;
+}
+
+.h-75 {
+  height: 75% !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+.mw-100 {
+  max-width: 100% !important;
+}
+
+.mh-100 {
+  max-height: 100% !important;
+}
+
+.min-vw-100 {
+  min-width: 100vw !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.vw-100 {
+  width: 100vw !important;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
 ::-webkit-input-placeholder {
   color: #666666;
 }
@@ -4800,10 +4866,23 @@ body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
-  line-height: 1.65;
+  line-height: 1.2;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   color: #333;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
 }
 
 .container {
@@ -4817,6 +4896,7 @@ body {
 ul {
   padding-left: 0;
   list-style-type: none;
+  margin-bottom: 0;
 }
 
 li {
@@ -4844,8 +4924,8 @@ a:hover {
   display: -ms-grid;
   display: grid;
   grid-gap: 30px;
-  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 4fr 30px 1fr 30px 1fr;
-  grid-template-columns: 1fr 1fr 1fr 4fr 1fr 1fr;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 2fr 30px 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 1fr;
       grid-template-areas: "left right";
 }
 
@@ -4878,18 +4958,97 @@ a:hover {
   background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7);
 }
 
-.menu {
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.header-wrapper {
+  height: 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  background: -webkit-gradient(linear, left top, right top, from(#F6EFD2), to(#CEAD78));
+  background: -o-linear-gradient(left, #F6EFD2, #CEAD78);
+  background: linear-gradient(to right, #F6EFD2, #CEAD78);
+}
+
+.header-menu {
   padding: 15px;
 }
 
-.menu__item {
+.header-menu__item {
   text-align: center;
   -webkit-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
 
-.menu__item a {
+.header-menu__item a {
   font-weight: 700;
   font-size: 18px;
+}
+
+.main-baner {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+}
+
+.section-title {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-about {
+  padding-top: 50px;
+}
+
+.section-about--bg {
+  background: url("https://www.aduvan.ru/wp-content/uploads/photo-gallery/wood-texturs/wood-texture_(93).jpg");
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.--withDash:before {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  width: 60px;
+  height: 5px;
+  background-color: #1b1208;
+}
+
+.about-box {
+  background-color: #fff;
+  padding: 50px;
+  max-width: 900px;
+  margin: auto;
 }

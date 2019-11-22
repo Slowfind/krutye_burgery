@@ -42,7 +42,10 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     return gulp.src([
         'app/js/jquery.min.js', // Optional jQuery plug-in (npm i --save-dev jquery)
-        'app/js/_lazy.js', // JS library plug-in example
+        'app/libs/paroller.js-master/dist/jquery.paroller.min.js',
+        'app/libs/fancybox-master/dist/jquery.fancybox.min.js',
+        'app/libs/swiper-master/dist/js/swiper.min.js',
+        'app/libs/WOW-master/dist/wow.min.js',
         'app/js/_custom.js', // Custom scripts. Always at the end
         ])
     .pipe(concat('scripts.min.js'))
